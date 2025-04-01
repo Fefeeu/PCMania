@@ -51,7 +51,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         do{ // do while que verifica se ainda ha computadores para serem vendidos e sair se o usuário digitar 0
             // -------- MOSTRANDO COMPUTADORES AINDA DISPONIVEIS PARA A COMPRA -
-            System.out.println("Computadores disponeiveis para compra: ");
+            System.out.println("Computadores ainda disponeiveis para compra: ");
             for(int i = 0; i < computadores.length; i++){
                 if(computadores[i] != null && listaDeCompras[i] == null){
                     System.out.println("-------------------- COMPUTADOR " + (i + 1) + " --------------------");
@@ -107,6 +107,7 @@ public class Main {
                 listaDeCompras[i].mostrarPCConfig();
             }
         }
-        System.out.println("O total a pagar por " + cliente.nome + " é de " + cliente.calculaTotalCompra(listaDeCompras) + "R$");
+        cliente.computador = listaDeCompras;
+        System.out.println("O total a pagar por " + cliente.nome + " é de " + cliente.calculaTotalCompra() + "R$");
     }
 }
